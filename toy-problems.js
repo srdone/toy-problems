@@ -5,14 +5,38 @@ Write a function that takes an array of integers and returns the sum of the inte
 plusOneSum([1, 2, 3, 4]); // 14
 */
 
+var plusOneSum = function (array) {
 
+  return array.reduce(function (previous, current) {
+    return previous + current + 1;
+  }, 0);
+
+};
+
+
+console.log(plusOneSum([1, 2, 3, 4])); // 14
 
 /*
 Write a function that accepts a multi dimensional array and returns a flattened version.
 flatten([1, 2, [3, [4], 5, 6], 7]) // [1, 2, 3, 4, 5, 6, 7]
 */
 
+var flatten = function (array, flatArray) {
+  var i;
+  var flattened = flatArray || [];
 
+  for (i = 0; i < array.length; i += 1) {
+    if (array[i].length) {
+      flattened = flatten(array[i], flattened);
+    } else {
+      flattened.push(array[i]);
+    }
+  }
+
+  return flattened;
+};
+
+console.log(flatten([1, 2, [3, [4], 5, 6], 7])); // [1, 2, 3, 4, 5, 6, 7]
 
 /*
 Given an array [a1, a2, ..., aN, b1, b2, ..., bN, c1, c2, ..., cN] convert it to [a1, b1, c1, a2, b2, c2, ..., aN, bN, cN]
