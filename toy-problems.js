@@ -151,6 +151,41 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 */
 
 
+
+assert.equal(
+  isMultipleOf(3, 6),
+  true
+);
+
+assert.equal(
+  isMultipleOf(5, 10),
+  true
+);
+
+assert.equal(
+  isMultipleOf(4, 2),
+  false
+);
+
+assert.equal(
+  isMultipleOf(3, 1),
+  false
+);
+
+assert.equal(
+  isMultipleOf(3, 0),
+  false
+);
+
+console.log('isMultipleOf Success!');
+
+assert.equal(
+  sumOfMultiplesBelow([3, 5], 10),
+  23
+);
+
+console.log('sumOfMultiplesBelow Success!');
+
 /*
 Remove duplicate characters in a given string keeping only the first occurrences. For example, if the input is ‘tree traversal’ the output will be "tre avsl".
 */
