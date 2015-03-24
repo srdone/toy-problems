@@ -93,6 +93,29 @@ longestWords("I gave a present to my parents") // ["present", "parents"]
 longestWords("Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo") // ["buffalo"] or ["Buffalo"]
 */
 
+var assert = require('assert');
+
+
+
+// we assume in everything below that the function automatically performs a standard sort.
+
+// should not return duplicates
+assert.deepEqual(
+  longestWords('a a b c'),
+  ['a', 'b', 'c']
+);
+
+// should return multiple
+assert.deepEqual(
+  longestWords('a bc def ghi jkl'),
+  ['def', 'ghi', 'jkl']
+);
+
+// case-insensitive
+assert.deepEqual(
+  longestWords('Alpha alpha BetaR, betar'),
+  ['alpha', 'beta']
+);
 
 /*
 If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
