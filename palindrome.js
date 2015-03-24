@@ -2,8 +2,9 @@ var assert = require('assert');
 
 
 var isPalindrome = function (string) {
-  var reversedString = string.split('').reverse().join('');
-  return string === reversedString;
+  var str = string.toLowerCase();
+  var reversedString = str.split('').reverse().join('');
+  return str === reversedString;
 };
 
 
