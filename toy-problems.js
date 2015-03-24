@@ -218,7 +218,19 @@ console.log(sumOfMultiplesBelow([3, 5], 100));
 Remove duplicate characters in a given string keeping only the first occurrences. For example, if the input is ‘tree traversal’ the output will be "tre avsl".
 */
 
+var uniqueString = function (string) {
+  var stringArray = string.split('');
+  var i;
+  var result = '';
 
+  for (i = 0; i < stringArray.length; i += 1) {
+    if (result.indexOf(stringArray[i]) === -1) {
+      result += stringArray[i];
+    }
+  }
+
+  return result;
+};
 
 
 // should remove duplicates
@@ -232,6 +244,8 @@ assert.equal(
   uniqueString('tree traversal'),
   'tre avsl'
 );
+
+console.log('unique string success!');
 
 /*
 Write a sum method which will work properly when invoked using either syntax below.
