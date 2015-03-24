@@ -70,9 +70,20 @@ console.log(array);
 There is an array of non-negative integers. A second array is formed by shuffling the elements of the first array and deleting a random element. Given these two arrays, find which element is missing in the second array.
 */
 
+var findMissing = function (arr1, arr2) {
+  var i;
 
+  for (i = 0; i < arr1.length; i += 1) {
+    if (arr2.indexOf(arr1[i]) === -1) {
+      return arr1[i];
+    }
+  }
+};
 
+var a = [1, 2, 3, 4, 5];
+var b = [5, 2, 4, 1];
 
+console.log(findMissing(a, b));
 
 /*
 Write a function that returns the longest word(s) from a sentence. The function should not return any duplicate words (case-insensitive).
