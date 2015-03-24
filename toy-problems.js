@@ -205,6 +205,11 @@ assert.equal(
   23
 );
 
+assert.equal(
+  sumOfMultiplesBelow([1, 0], 10),
+  45
+);
+
 console.log('sumOfMultiplesBelow Success!');
 
 /*
