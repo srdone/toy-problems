@@ -157,6 +157,22 @@ var isMultipleOf = function (multipleOf, numberToTest) {
   return (numberToTest % multipleOf) === 0;
 };
 
+var sumOfMultiplesBelow = function (arrayOfMultipleOf, threshold) {
+  var i, j;
+  var result = 0;
+
+  for (i = 1; i < threshold; i += 1) {
+    for (j = 0; j < arrayOfMultipleOf.length; j += 1) {
+      if (isMultipleOf(arrayOfMultipleOf[j], i)) {
+        result += i;
+        break; //break out so we don't double count a number
+      }
+    }
+  }
+
+  return result;
+};
+
 assert.equal(
   isMultipleOf(3, 6),
   true
