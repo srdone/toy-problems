@@ -95,7 +95,33 @@ longestWords("Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo") 
 
 var assert = require('assert');
 
+var longestWords = function (string) {
+  var lowercaseString = string.toLowerCase();
+  var words = lowercaseString.split(' ');
+  var uniqueWords = [];
+  var longestWordList = [];
+  var i;
 
+  for (i = 0; i < words.length; i += 1) {
+    if (uniqueWords.indexOf(words[i]) === -1) {
+      uniqueWords.push(words[i]);
+    }
+  }
+
+  longestWordList.push(uniqueWords[0]);
+  for (i = 1; i < uniqueWords.length; i += 1) {
+    if (longestWordList[0].length === uniqueWords[i].length) {
+      longestWordList.push(uniqueWords[i]);
+    } else if (longestWordList[0].length < uniqueWords[i].length) {
+      longestWordList = [];
+      longestWordList.push(uniqueWords[i]);
+    }
+  }
+
+  longestWordList.sort();
+
+  return longestWordList;
+};
 
 // we assume in everything below that the function automatically performs a standard sort.
 
@@ -113,9 +139,11 @@ assert.deepEqual(
 
 // case-insensitive and converts to lower case
 assert.deepEqual(
-  longestWords('Alpha alpha BetaR, betar'),
-  ['alpha', 'beta']
+  longestWords('Alpha alpha BetaR betar'),
+  ['alpha', 'betar']
 );
+
+console.log('Problem six success!');
 
 /*
 If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
