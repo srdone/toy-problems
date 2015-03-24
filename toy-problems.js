@@ -111,7 +111,7 @@ assert.deepEqual(
   ['def', 'ghi', 'jkl']
 );
 
-// case-insensitive
+// case-insensitive and converts to lower case
 assert.deepEqual(
   longestWords('Alpha alpha BetaR, betar'),
   ['alpha', 'beta']
