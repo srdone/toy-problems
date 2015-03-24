@@ -39,4 +39,9 @@ assert.equal(
   true
 );
 
+assert.equal(
+  isPalindrome('ABa'),
+  true
+);
+
 console.log('Success!');
