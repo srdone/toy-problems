@@ -253,6 +253,17 @@ console.log(sum(2,3));   // Outputs 5
 console.log(sum(2)(3));  // Outputs 5
 */
 
+var sum = function (a, b) {
+  var add = function (x) {
+    return a + x;
+  };
+  
+  if (b === undefined) {
+    return add;
+  } else {
+    return add(b);
+  }
+};
 
 assert.equal(
   sum(2,3),
