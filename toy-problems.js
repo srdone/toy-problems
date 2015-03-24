@@ -212,11 +212,26 @@ assert.equal(
 
 console.log('sumOfMultiplesBelow Success!');
 
+console.log(sumOfMultiplesBelow([3, 5], 100));
+
 /*
 Remove duplicate characters in a given string keeping only the first occurrences. For example, if the input is ‘tree traversal’ the output will be "tre avsl".
 */
 
 
+
+
+// should remove duplicates
+assert.equal(
+  uniqueString('aa'),
+  'a'
+);
+
+// should remove duplicates in complex strings
+assert.equal(
+  uniqueString('tree traversal'),
+  'tre avsl'
+);
 
 /*
 Write a sum method which will work properly when invoked using either syntax below.
